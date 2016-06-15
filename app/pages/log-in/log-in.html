@@ -1,0 +1,24 @@
+
+<ion-navbar *navbar>
+  <ion-title>Log in</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="getting-started">
+  <h2>Star Tours</h2>
+  <p>
+    Log in or register to book the interstellar cruise of your dreams!
+  </p>
+  <ion-list>
+  <ion-item>
+    <ion-label primary>Username</ion-label>
+    <ion-input placeholder="obi_wan_77" type="text">Username</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label primary>Password</ion-label>
+    <ion-input placeholder="usetheforce" type="password"></ion-input>
+  </ion-item>
+  </ion-list>
+  <button primary full outline>Register</button>
+  <button primary full (click)="signIn($event)">Log in</button>
+</ion-content>
