@@ -28,9 +28,9 @@ export class ListPage {
     }
   }
 
-  itemTapped(event, item) {
+  itemTapped(event, planet) {
     this.nav.push(ItemDetailsPage, {
-      item: item
+      planet: planet
     });
   }
   ngOnInit(){

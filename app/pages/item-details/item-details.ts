@@ -5,10 +5,10 @@ import {Page, NavController, NavParams} from 'ionic-angular';
   templateUrl: 'build/pages/item-details/item-details.html'
 })
 export class ItemDetailsPage {
-  selectedItem: any;
+  planet: any;
 
   constructor(private nav: NavController, navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.planet = navParams.get('planet');
   }
 }

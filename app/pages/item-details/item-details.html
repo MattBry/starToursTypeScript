@@ -1,16 +1,24 @@
 <ion-navbar *navbar>
-  <button menuToggle *ngIf="!selectedItem">
+  <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Item Details</ion-title>
+  <ion-title>Planet Details</ion-title>
 </ion-navbar>
 
 <ion-content>
- <div *ngIf="selectedItem" class="selection">
-    <b>{{selectedItem.title}}</b>
-    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
+  <button primary outline full menuToggle>
+    View menu
+  </button>
+  <div margin="auto">
+    <h1>{{planet.name}}</h1>
+    <img src="http://fillmurray.com/300/200">
   </div>
+  <ion-list>
+    <ion-item>Rotation period: {{planet.rotation_period}}</ion-item>
+    <ion-item>Orbital period: {{planet.orbital_period}}</ion-item>
+    <ion-item>Diameter: {{planet.diameter}}</ion-item>
+    <ion-item>Gravity: {{planet.gravity}}</ion-item>
+    <ion-item>Climate: {{planet.climate}}</ion-item>
+    <ion-item>Terrain: {{planet.terrain}}</ion-item>
+  </ion-list>
 </ion-content>
