@@ -34,7 +34,6 @@ export class ListPage {
     });
   }
   ngOnInit(){
-    console.log(this.planetService.getPlanets());
     this.planetService.getPlanets().then(response => this.planets = response.results);
   }
 }
