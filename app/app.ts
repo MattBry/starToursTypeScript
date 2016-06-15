@@ -1,9 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
 import {LoginPage} from './pages/log-in/log-in';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {PlanetService} from './services/planet.service.ts';
 
 @Component({
   templateUrl: 'build/app.html'
@@ -14,7 +15,6 @@ class MyApp {
   // make HelloIonicPage the root (or first) page
   rootPage: any = LoginPage;
   pages: Array<{title: string, component: any}>;
-
   constructor(
     private platform: Platform,
     private menu: MenuController
@@ -44,4 +44,4 @@ class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [HTTP_PROVIDERS, PlanetService]);

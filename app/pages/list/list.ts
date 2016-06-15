@@ -1,19 +1,20 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {ItemDetailsPage} from '../item-details/item-details';
-
+import {PlanetService} from '../../services/planet.service.ts';
 
 @Page({
   templateUrl: 'build/pages/list/list.html'
 })
 export class ListPage {
   selectedItem: any;
+  planets: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
-
-  constructor(private nav: NavController, navParams: NavParams) {
+  providers: [PlanetService];
+  constructor(private nav: NavController, public planetService: PlanetService) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
+    this.planetService = planetService;
+    this.planets = [];
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
@@ -31,5 +32,9 @@ export class ListPage {
     this.nav.push(ItemDetailsPage, {
       item: item
     });
+  }
+  ngOnInit(){
+    console.log(this.planetService.getPlanets());
+    this.planetService.getPlanets().then(response => this.planets = response.results);
   }
 }
