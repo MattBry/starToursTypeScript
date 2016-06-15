@@ -7,7 +7,7 @@
     View menu
   </button>
   <ion-card *ngFor="let planet of planets" (click)="itemTapped($event, planet)">
-  <img src="http://fillmurray.com/200/100"/>
+  <img src="http://placehold.it/200x150?text={{planet.name}}+image">
   <ion-card-content>
     <ion-card-title>
       {{planet.name}}
